@@ -2,6 +2,22 @@
     $title = 'Learn PHP From Scratch';
     $heading = 'Welcome To The Course';
     $body = 'In this course, you will learn the fundamentals of the PHP language';
+
+    // apply some string functions
+    $person = new stdClass();
+    $person->firstName = 'John';
+    $person->lastName = 'Doe';
+
+    $fullName = $person->firstName . ' ' . $person->lastName;
+
+    // type casting
+    $price = 9.99;
+    $price = (int) $price; // convert to integer explicit casting
+
+    // implicit casting
+    $price = '9.99';
+    $price2 = 10;
+    $total = $price + $price2; // convert to float implicitly
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +43,10 @@
     </div>
     <div class="container mx-auto p-4 mt-4">
         <div class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-semibold mb-4"><?= $heading ?> </h2>
-            <p><?= $body ?></p>
+          <!-- Output -->
+          <?= 'Hello my name is: ' . $fullName; ?>
+          <h3><?= $heading; ?></h3>
+        <p><?='Implicit casting: ' . $total ?></p>
         </div>
     </div>
 </body>
