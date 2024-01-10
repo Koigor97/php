@@ -73,6 +73,11 @@ echo 'Using in_array()';
 $inArray = in_array(1, $numbers);
 inspect($inArray);
 
+// array_search()
+echo 'Using array_search()';
+$search = array_search(1, $numbers);
+inspect($search);
+
 
 
 // array method that mutate the array
@@ -161,4 +166,38 @@ inspect($numbers);
 echo 'Using reverse()';
 $numbers6 = array_reverse($numbers);
 inspect($numbers6);
+
+
+//  associative array
+echo 'Using associative array';
+$person = [
+    'name' => 'John Doe',
+    'age' => 30,
+    'hobbies' => ['Reading', 'Coding']
+];  
+inspect($person);
+
+// acessing associative array
+echo 'Using acessing associative array';
+inspect($person['name']);
+
+// multidimensional array
+echo 'Using multidimensional array';
+$people = [
+    [
+        'name' => 'John Doe',
+        'age' => 30,
+        'hobbies' => ['Reading', 'Coding']
+    ],
+    [
+        'name' => 'Jane Doe',
+        'age' => 25,
+        'hobbies' => ['Reading', 'Coding']
+    ]
+];
+inspect($people);
+
+// acessing multidimensional array
+echo 'Using acessing multidimensional array';
+inspect($people[0]['name']);
 
