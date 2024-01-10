@@ -194,6 +194,17 @@
     $text = 'hello world';
     $capitalized = ucwords($text);
     $output = 'Capitalized: ' . $capitalized;
+
+    for($i = 0; $i < 10; $i++) {
+        $output = 'Number: ' . $i;
+    }
+
+    // do while loop
+    $number = 0;
+    do {
+        $output = 'Number: ' . $number;
+        $number++;
+    } while ($number < 15);
 ?>
 
 <!DOCTYPE html>
@@ -231,6 +242,17 @@
           <!-- Output -->
           <p>Calcalulation output: </p>
           <?='Output: ' . $output; ?>
+        </div>
+    </div>
+    <div class="container mx-auto p-4 mt-4">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <!-- Output -->
+          <p>Loop output: </p>
+          <ul>
+            <?php for($i = 0; $i < 10; $i++) { ?>
+              <li><?= 'Number: ' . $i; ?></li>
+            <?php } ?>
+          </ul>
         </div>
     </div>
 </body>
