@@ -235,9 +235,15 @@
         
     </header>
     <div>
-        <a href="index.php">Home</a>
-        <a href="types.php">Types</a>
-        <a href="working_with_date.php">Date</a>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="types.php">Types</a></li>
+            <li><a href="working_with_date.php">Date</a></li>
+            <li><a href='functions.php'>Functions</a></li>
+        </ul>
+        
+        
+        
     </div>
     <div class="container mx-auto p-4 mt-4">
         <div class="bg-white rounded-lg shadow-md p-6">
