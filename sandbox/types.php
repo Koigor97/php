@@ -47,3 +47,71 @@ echo '<br>';
 $file = fopen('common.txt', 'w');
 var_dump($file);
 echo '<br>';
+
+
+// control structures and conditional statements
+// if statement
+$age = 20;
+
+if ($age > 18) {
+    echo 'You can drink beer';
+} else {
+    echo 'You can drink juice';
+}
+echo '<br>';
+
+// if-else statement
+$age = 20;
+
+if ($age > 18) {
+    echo 'You can drink beer';
+} elseif ($age > 15) {
+    echo 'You can drink juice';
+} else {
+    echo 'You can drink milk';
+}
+echo '<br>';
+
+// nested if statement
+$age = 20;
+$country = 'Kenya';
+
+if ($age > 18) {
+    if ($country === 'Kenya') {
+        echo 'You can drink beer';
+    } else {
+        echo 'You can drink juice';
+    }
+} else {
+    echo 'You can drink milk';
+}
+echo '<br>';
+
+// switch statement
+$color = 'red';
+
+switch ($color) {
+    case 'red':
+        echo 'Your favorite color is red';
+        break;
+    case 'blue':
+        echo 'Your favorite color is blue';
+        break;
+    case 'green':
+        echo 'Your favorite color is green';
+        break;
+    default:
+        echo 'Your favorite color is something else';
+        break;
+}
+echo '<br>';
+
+// while loop
+$i = 0;
+
+while ($i < 10) {
+    echo $i;
+    $i++;
+}
+echo '<br>';
+
