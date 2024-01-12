@@ -240,7 +240,7 @@
 
     $host = getenv('DB_HOST');
     $user = getenv('DB_USER'); 
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -267,6 +267,7 @@
             <li><a href="working_with_date.php">Date</a></li>
             <li><a href='functions.php'>Functions</a></li>
             <li><a href="classes.php">Classes</a></li>
+            <li><a href="job-listings.php">Job Listings</a></li>
         </ul>
         
         
