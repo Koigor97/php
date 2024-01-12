@@ -201,3 +201,12 @@ inspect($people);
 echo 'Using acessing multidimensional array';
 inspect($people[0]['name']);
 
+// nested loops
+echo 'Using nested loops';
+for ($i = 0; $i < count($people); $i++) {
+    for ($j = 0; $j < count($people[$i]['hobbies']); $j++) {
+        inspect($people[$i]['hobbies'][$j]);
+    }
+}
+
+
