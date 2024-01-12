@@ -205,6 +205,16 @@
         $output = 'Number: ' . $number;
         $number++;
     } while ($number < 15);
+
+    // conditional statement
+    $isLoggedin = true;
+
+    // comparison operators
+    $number = 10;
+    $number2 = 5;
+
+    $compare = 'Number: ' . $number;
+    
 ?>
 
 <!DOCTYPE html>
@@ -253,6 +263,62 @@
               <li><?= 'Number: ' . $i; ?></li>
             <?php } ?>
           </ul>
+        </div>
+    </div>
+    <div class="container mx-auto p-4 mt-4">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <!-- Output -->
+          <p>Conditionals:  </p>
+          <?php if($isLoggedin) { ?>
+            <p>You are logged in</p>
+            <h1 class="text-3xl">Welcome to the App</h1>
+            <?php } else { ?>
+            <p>You are not logged in</p>
+            <?php } ?>
+        </div>
+    </div>
+    <div class="container mx-auto p-4 mt-4">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <!-- Output -->
+          <p>Comparison Operators:  </p>
+          <?php if($number > $number2) { ?>
+            <p><?= $number ?> is greater than <?= $number2 ?></p>
+            <?php } elseif($number < $number2) { ?>
+            <p><?= $number ?> is less than <?= $number2 ?></p>
+            <?php } else { ?>
+            <p><?= $number ?> is equal to <?= $number2 ?></p>
+            <?php } ?>
+
+            // and operator
+            <?php if($number > $number2 && $number > 0) { ?>
+            <p><?= $number ?> is greater than <?= $number2 ?> and greater than 0</p>
+            <?php } ?>
+
+            // or operator
+            <?php if($number > $number2 || $number > 0) { ?>
+            <p><?= $number ?> is greater than <?= $number2 ?> or greater than 0</p>
+            <?php } ?>
+
+            // not operator
+            <?php if(!$number > $number2) { ?>
+            <p><?= $number ?> is not greater than <?= $number2 ?></p>
+            <?php } ?>
+
+            // ternary operator
+            <p><?= $number > $number2 ? $number . ' is greater than ' . $number2 : $number . ' is less than ' . $number2 ?></p>
+
+            // null coalescing operator
+            <p><?= $compare ?? 'Number is not set' ?></p>
+
+            // spaceship operator
+            <p><?= $number <=> $number2 ?></p>
+
+            // null coalescing assignment operator
+            <?php $compare ??= 'Number is not set' ?>
+            <p><?= $compare ?></p>
+            
+
+
         </div>
     </div>
 </body>
