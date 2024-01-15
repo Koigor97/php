@@ -152,7 +152,16 @@ if(isset($_SESSION['name'])) {
   echo $_SESSION['name'];
 }
 
+// PHP cookies
+setcookie('name', 'John Doe', time() + 3600);
 
+// check if cookie is set
+if(isset($_COOKIE['name'])) {
+  echo $_COOKIE['name'];
+}
+
+// delete cookie
+setcookie('name', '', time() - 3600, '/');
 ?>
 
 
@@ -248,6 +257,10 @@ if(isset($_SESSION['name'])) {
         </div>
       <?php endif; ?>
     </div>
+    <div class="mb-4">
+          <label for="title" class="block text-gray-700 font-medium">Cookie In PHP</label>
+          
+        </div>
   </div>
 </body>
 
