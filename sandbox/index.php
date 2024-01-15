@@ -241,6 +241,17 @@
     $host = getenv('DB_HOST');
     $user = getenv('DB_USER'); 
 
+    // super globals
+    $GLOBALS['name'] = 'Johnny Boy';
+    $name = 'Jane Doe';
+
+    function getName()
+    {
+        return $GLOBALS['name'];
+    }
+
+    $global = 'Name: ' . getName();
+
 ?>
 
 <!DOCTYPE html>
@@ -436,6 +447,10 @@
       <div class="bg-gray-200 p-4 rounded-lg">
         <strong class="block mb-2">DB User:</strong>
                 <?= $user ?>
+      </div>
+      <div class="bg-gray-200 p-4 rounded-lg">
+        <strong class="block mb-2">Super Globals:</strong>
+               <?= $global ?>
       </div>
 
     </div>
