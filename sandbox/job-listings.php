@@ -93,18 +93,47 @@ if (isset($_GET['location'])) {
     $title = htmlspecialchars($_POST['title']) ?? '';
     $description = htmlspecialchars($_POST['description']) ?? '';
 
+    $file = $_FILES['logo'];
+
+    if($file['error'] === UPLOAD_ERR_OK) {
+      // specify upload directory
+      $uploadDir = 'uploads/';
+
+      // check and create the directory if it doesn't exist
+      if(!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+      }
+
+      // create file name
+      $fileName = uniqid() . '-' . $file['name'];
+
+      // check file type
+      $allowedTypes = ['jpg', 'jpeg', 'png'];
+      $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+      if(!in_array($fileExtension, $allowedTypes)) {
+        echo 'File type not allowed';
+        exit;
+      }
+
+      // check file size
+      if($file['size'] > 1000000) {
+        echo 'File size exceeds limit';
+        exit;
+      }
+      
+
+     // upload file
+       if (move_uploaded_file($file['tmp_name'], $uploadDir . $fileName)) {
+        echo 'File uploaded successfully';
+       } else {
+         echo 'Error uploading file' . $file['error'];
+       }
+    }
+
     // set submitted to true
     $submitted = true;
 
-    // add new job to the listings array
-    $listings[] = [
-      'id' => count($listings) + 1,
-      'title' => $title,
-      'description' => $description,
-      'salary' => 0,
-      'location' => $location,
-      'tags' => []
-    ];
   }
 
 }
@@ -170,6 +199,10 @@ if (isset($_GET['location'])) {
         <div class="mb-6">
           <label for="description" class="block text-gray-700 font-medium">Description</label>
           <textarea id="description" name="description" placeholder="Enter job description" class="w-full px-4 py-2 border rounded focus:ring focus:ring-blue-300 focus:outline-none"></textarea>
+        </div>
+        <div class="mb-4">
+          <label for="resume" class="block text-gray-700 font-medium">Logo</label>
+          <input type="file" name="logo" id="logo" class="w-full px-4 py-2 border rounded focus:ring focus:ring-blue-300">
         </div>
         <div class="flex items-center justify-between">
           <button type="submit" name="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none">
