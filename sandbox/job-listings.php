@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $listings = [
   [
     'id' => 1,
@@ -136,7 +138,21 @@ if (isset($_GET['location'])) {
 
   }
 
+  
 }
+
+// PHP session
+$_SESSION['name'] = 'John Doe';
+$_SESSION['age'] = 30;
+$_SESSION['location'] = 'New York';
+
+print_r($_SESSION);
+
+if(isset($_SESSION['name'])) {
+  echo $_SESSION['name'];
+}
+
+
 ?>
 
 
