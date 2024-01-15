@@ -83,6 +83,30 @@ if (isset($_GET['location'])) {
 
   // update the listings array
   $listings = $filteredJobs;
+
+  // POST request
+  $title = '';
+  $description = '';
+  $submitted = false;
+
+  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+    $title = htmlspecialchars($_POST['title']) ?? '';
+    $description = htmlspecialchars($_POST['description']) ?? '';
+
+    // set submitted to true
+    $submitted = true;
+
+    // add new job to the listings array
+    $listings[] = [
+      'id' => count($listings) + 1,
+      'title' => $title,
+      'description' => $description,
+      'salary' => 0,
+      'location' => $location,
+      'tags' => []
+    ];
+  }
+
 }
 ?>
 
@@ -156,6 +180,24 @@ if (isset($_GET['location'])) {
       </form>
 
       <!-- Display submitted data -->
+      <?php if ($submitted) : ?>
+        <div class=".mt-6 p-4 border rounded bg-gray-200">
+          <h2 class="text-lg font-semibold">Submitted Job Listing</h2>
+          <p>
+            <strong>Tiltle:</strong>
+            <?= $title ?? 'N/A' ?>
+          </p>
+          <p>
+            <strong>Description:</strong>
+            <?= $description ?? 'N/A' ?>
+          </p>
+          <p>
+            <strong>Submitted:</strong>
+            <?= $submitted ? 'Yes' : 'No' ?>
+          </p>
+
+        </div>
+      <?php endif; ?>
     </div>
   </div>
 </body>
