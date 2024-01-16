@@ -54,7 +54,7 @@ $post = $stmt->fetch();
       <form action="delete.php" method="post">
         <input type="hidden" name="_method" value="delete">
         <input type="hidden" name="id" value="<?= $post['id'] ?>">
-        <button type="submit" name="submit" class="text-xl bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none">Delete</button>
+        <button type="submit" name="submit" class="text-xl bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500 focus:outline-none">Delete</button>
       </form>
     </div>
   </div>
