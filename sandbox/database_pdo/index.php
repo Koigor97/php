@@ -33,7 +33,7 @@ $results = $stmt->fetchAll();
       <div class="md my-4">
         <div class="rounded-lg shadow-md">
           <div class="p-4">
-            <h2 class="text-xl font-semibold"><?php echo $post['title']; ?></h2>
+            <h2 class="text-xl font-semibold"><a href="post.php?id=<?= $post['id'] ?>"><?php echo $post['title']; ?></a></h2>
             <p class="text-gray-700 text-lg mt-2"><?php echo $post['body']; ?></p>
           </div>
         </div>
