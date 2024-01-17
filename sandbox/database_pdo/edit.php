@@ -41,7 +41,9 @@ if($isPutRequest) {
     'id' => $id,
   ]
 
-  $stmt->execute($params);
+  $stmt->execute($param);
+
+
 
   header('Location: index.php');
   exit;
