@@ -4,7 +4,7 @@ $host = 'localhost';
 $port = 3306;
 $dbName = 'blog';
 $username = 'sam';
-// $password = 'password';
+
 
 // DSN (Data Source Name) specifies the host computer for the MySQL database
 $dsn = "mysql:host={$host};port={$port};dbname={$dbName};charset=utf8";
@@ -18,8 +18,8 @@ try {
   // Set the PDO error mode to exception
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  // Fetch as an associative array
-  
+  // Fetch data as associative array
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
   echo("ERROR: Could not connect. " . $e->getMessage());
