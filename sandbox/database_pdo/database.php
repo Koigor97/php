@@ -4,7 +4,7 @@ $host = 'localhost';
 $port = 3306;
 $dbName = 'blog';
 $username = 'sam';
-
+$password = // password here
 
 // DSN (Data Source Name) specifies the host computer for the MySQL database
 $dsn = "mysql:host={$host};port={$port};dbname={$dbName};charset=utf8";
